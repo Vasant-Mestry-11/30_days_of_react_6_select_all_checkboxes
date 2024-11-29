@@ -38,8 +38,9 @@ const Checkboxes = () => {
                 key={id}
                 id={id}
                 onChange={() => handleCheckboxChange(id)}
+                className="cursor-pointer"
               />
-              <label htmlFor={id} className="text-xl">
+              <label htmlFor={id} className="text-xl cursor-pointer">
                 {label}
               </label>
             </div>
