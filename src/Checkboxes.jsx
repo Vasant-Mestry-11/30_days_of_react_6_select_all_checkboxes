@@ -23,16 +23,15 @@ const Checkboxes = () => {
     tempCheckboxes.forEach((ele) => {
       ele.checked = true;
     });
-    setCheckboxes(tempCheckboxes)
+    setCheckboxes(tempCheckboxes);
   };
 
   return (
-    <div className="container">
-      <div>
+    <div className="h-screen w-full p-8 bg-stone-400">
+      <div className="flex flex-col gap-3">
         {checkboxes.map(({ id, label, checked }) => {
           return (
-            <div key={id}>
-              <label htmlFor={id}>{label}</label>
+            <div key={id} className="flex items-center gap-4">
               <input
                 type="checkbox"
                 checked={checked}
@@ -40,11 +39,19 @@ const Checkboxes = () => {
                 id={id}
                 onChange={() => handleCheckboxChange(id)}
               />
+              <label htmlFor={id} className="text-xl">
+                {label}
+              </label>
             </div>
           );
         })}
       </div>
-      <button onClick={handleSelectAll}>Select All</button>
+      <button
+        onClick={handleSelectAll}
+        className="mt-4 bg-slate-900 text-orange-300 px-4 p-2 rounded-md"
+      >
+        Select All
+      </button>
     </div>
   );
 };
