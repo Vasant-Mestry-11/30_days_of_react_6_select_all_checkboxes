@@ -27,7 +27,7 @@ const Checkboxes = () => {
   };
 
   return (
-    <div className="h-screen w-full p-8 bg-stone-400">
+    <div className="h-screen w-full p-8 bg-primary">
       <div className="flex flex-col gap-3">
         {checkboxes.map(({ id, label, checked }) => {
           return (
@@ -38,7 +38,7 @@ const Checkboxes = () => {
                 key={id}
                 id={id}
                 onChange={() => handleCheckboxChange(id)}
-                className="cursor-pointer"
+                className="cursor-pointer w-4 h-7 rounded"
               />
               <label htmlFor={id} className="text-xl cursor-pointer">
                 {label}
@@ -49,7 +49,7 @@ const Checkboxes = () => {
       </div>
       <button
         onClick={handleSelectAll}
-        className="mt-4 bg-slate-900 text-orange-300 px-4 p-2 rounded-md"
+        className="mt-4 bg-secondary text-tertiary px-4 p-2 rounded-md uppercase tracking-widest"
       >
         Select All
       </button>
