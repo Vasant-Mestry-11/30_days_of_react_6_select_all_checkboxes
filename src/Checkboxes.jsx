@@ -18,12 +18,20 @@ const Checkboxes = () => {
     setCheckboxes(tempCheckboxes);
   };
 
+  const handleSelectAll = () => {
+    const tempCheckboxes = [...checkboxes];
+    tempCheckboxes.forEach((ele) => {
+      ele.checked = true;
+    });
+    setCheckboxes(tempCheckboxes)
+  };
+
   return (
     <div className="container">
       <div>
         {checkboxes.map(({ id, label, checked }) => {
           return (
-            <>
+            <div key={id}>
               <label htmlFor={id}>{label}</label>
               <input
                 type="checkbox"
@@ -32,11 +40,11 @@ const Checkboxes = () => {
                 id={id}
                 onChange={() => handleCheckboxChange(id)}
               />
-            </>
+            </div>
           );
         })}
       </div>
-      <button>Select All</button>
+      <button onClick={handleSelectAll}>Select All</button>
     </div>
   );
 };
