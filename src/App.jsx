@@ -1,7 +1,10 @@
 import "./App.css";
+import Checkboxes from "./Checkboxes";
 
 function App() {
-  return <></>;
+  return <>
+    <Checkboxes />
+  </>;
 }
 
 export default App;
